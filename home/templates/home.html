@@ -1,0 +1,356 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TestCraft AI | Smarter Testing with AI</title>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+
+    <!-- =========================
+        NAVBAR
+    ========================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="/" class="brand">
+                <div class="brand-icon">🤖</div>
+
+                <div class="brand-text">
+                    <div class="brand-name">
+                        TestCraft <span>AI</span>
+                    </div>
+
+                    <div class="brand-tagline">
+                        Smarter Testing with AI
+                    </div>
+                </div>
+            </a>
+
+            <nav class="nav-actions">
+                <!-- Replace URLs with your Django URL names -->
+                <a href="{% url 'users:signin' %}" class="btn btn-outline">
+                    Sign In
+                </a>
+
+                <a href="{% url 'users:signup' %}" class="btn btn-primary nav-signup">
+                    Sign Up
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =========================
+            HERO
+        ========================== -->
+        <section class="hero">
+
+            <div class="hero-background-circle circle-one"></div>
+            <div class="hero-background-circle circle-two"></div>
+
+            <div class="container hero-container">
+
+                <!-- LEFT -->
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        AI-POWERED QA ASSISTANT
+                    </div>
+
+                    <h1>
+                        Generate, Evaluate<br>
+                        and Manage Test Cases<br>
+                        <span>with AI</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Turn your requirements into comprehensive test cases
+                        in seconds. Improve quality, ensure coverage, and
+                        streamline your QA workflow with the power of AI.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="{% url 'users:signup' %}" class="btn btn-primary hero-button">
+                            Sign Up
+                            <span class="arrow">→</span>
+                        </a>
+
+                        <a href="{% url 'users:signin' %}" class="btn btn-outline hero-button">
+                            Sign In
+                        </a>
+
+                    </div>
+
+                    <div class="benefits">
+
+                        <div class="benefit">
+                            <span class="check">✓</span>
+                            Save time
+                        </div>
+
+                        <div class="benefit">
+                            <span class="check">✓</span>
+                            Better coverage
+                        </div>
+
+                        <div class="benefit">
+                            <span class="check">✓</span>
+                            Higher quality
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                    RIGHT PRODUCT PREVIEW
+                ========================== -->
+                <div class="hero-visual">
+
+                    <div class="visual-background"></div>
+
+                    <!-- Generate badge -->
+                    <div class="floating-card generate-card">
+                        <div class="floating-icon purple-icon">⚡</div>
+
+                        <div>
+                            <strong>Generate</strong>
+                            <span>in seconds</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Main application preview -->
+                    <div class="app-preview">
+
+                        <!-- Sidebar -->
+                        <aside class="preview-sidebar">
+
+                            <div class="preview-logo">
+                                <span>🤖</span>
+                                <strong>
+                                    TestCraft <em>AI</em>
+                                </strong>
+                            </div>
+
+                            <div class="sidebar-menu">
+
+                                <div class="sidebar-item">
+                                    <span>◆</span>
+                                    Dashboard
+                                </div>
+
+                                <div class="sidebar-item active">
+                                    <span>⌂</span>
+                                    Generate Test Cases
+                                </div>
+
+                                <div class="sidebar-item">
+                                    <span>▤</span>
+                                    Templates
+                                </div>
+
+                                <div class="sidebar-item">
+                                    <span>□</span>
+                                    Projects
+                                </div>
+
+                                <div class="sidebar-item">
+                                    <span>▥</span>
+                                    Evaluation
+                                </div>
+
+                                <div class="sidebar-item">
+                                    <span>◷</span>
+                                    History
+                                </div>
+
+                            </div>
+
+                        </aside>
+
+
+                        <!-- Preview content -->
+                        <div class="preview-content">
+
+                            <h3>Generate Test Cases</h3>
+
+                            <p class="preview-subtitle">
+                                Turn your requirements into comprehensive
+                                test cases with AI
+                            </p>
+
+                            <div class="requirement-box">
+                                <p>
+                                    As a user,<br>
+                                    I want to reset my password using my
+                                    registered email<br>
+                                    so that I can regain access to my account.
+                                </p>
+
+                                <span>108/2000</span>
+                            </div>
+
+
+                            <div class="form-options">
+
+                                <div class="fake-field">
+                                    <label>Test Type</label>
+                                    <div>Functional + Security</div>
+                                </div>
+
+                                <div class="fake-field">
+                                    <label>Output Format</label>
+                                    <div>Detailed</div>
+                                </div>
+
+                                <div class="fake-field">
+                                    <label>Number of Test Cases</label>
+                                    <div>Auto</div>
+                                </div>
+
+                            </div>
+
+                            <button class="generate-button">
+                                ✨ Generate Test Cases
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Floating coverage card -->
+                    <div class="floating-card coverage-card">
+                        <div class="floating-icon green-icon">✓</div>
+
+                        <div>
+                            <strong>Better</strong>
+                            <span>Coverage</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Evaluation card -->
+                    <div class="floating-card evaluation-card">
+
+                        <div class="chart-icon">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <div>
+                            <strong>AI Evaluation</strong>
+                            <span>Check quality &amp; coverage</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+            FEATURES
+        ========================== -->
+        <section class="features">
+
+            <div class="container feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon purple-feature">
+                        ▣
+                    </div>
+
+                    <div>
+                        <h3>AI Test Case Generation</h3>
+
+                        <p>
+                            Create functional, negative,
+                            boundary and security test cases
+                            automatically.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon green-feature">
+                        ♢
+                    </div>
+
+                    <div>
+                        <h3>Quality Evaluation</h3>
+
+                        <p>
+                            Check requirement coverage,
+                            semantic relevance, and test
+                            diversity.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon blue-feature">
+                        ▦
+                    </div>
+
+                    <div>
+                        <h3>Templates</h3>
+
+                        <p>
+                            Use ready-to-use templates
+                            or create your own.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon orange-feature">
+                        □
+                    </div>
+
+                    <div>
+                        <h3>Projects</h3>
+
+                        <p>
+                            Organize your testing work
+                            and collaborate with your team.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

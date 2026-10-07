@@ -1,0 +1,290 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | TestCraft AI</title>
+
+    <!-- Reuse login CSS -->
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <main class="login-main">
+
+        <section class="login-section">
+
+            <!-- Logo -->
+            <a href="{% url 'home:home' %}" class="login-logo">
+                🤖
+            </a>
+
+            <!-- Title -->
+            <h1>Create your TestCraft AI account</h1>
+
+            <p class="login-subtitle">
+                Start generating smarter test cases<br>
+                and improve your QA workflow.
+            </p>
+
+
+            <!-- SIGN UP CARD -->
+            <div class="login-card">
+
+                <!-- Django Messages -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="message {{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+
+                    <!-- Username -->
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="password-input-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="password"
+                                aria-label="Show password"
+                            >
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+
+                        <label for="confirm_password">
+                            Confirm password
+                        </label>
+
+                        <div class="password-input-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirm_password"
+                                name="confirm_password"
+                                placeholder="Enter your password again"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="confirm_password"
+                                aria-label="Show password"
+                            >
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sign Up Button -->
+                    <button
+                        type="submit"
+                        class="signin-button"
+                    >
+                        Create account
+                    </button>
+
+
+                    <!-- Divider -->
+                    <div class="divider">
+
+                        <span></span>
+
+                        <p>or</p>
+
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- Google -->
+                    <a href="#" class="google-button">
+
+                        <svg
+                            class="google-icon"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <path
+                                fill="#FFC107"
+                                d="M43.6 20H42V20H24V28H35.3C33.7 32.7 29.2 36 24 36C17.4 36 12 30.6 12 24C12 17.4 17.4 12 24 12C27.1 12 29.9 13.2 32 15.1L37.7 9.4C34.1 6.1 29.3 4 24 4C12.9 4 4 12.9 4 24C4 35.1 12.9 44 24 44C35.1 44 44 35.1 44 24C44 22.7 43.9 21.3 43.6 20Z"
+                            />
+
+                            <path
+                                fill="#FF3D00"
+                                d="M6.3 14.7L12.9 19.5C14.7 15.1 19 12 24 12C27.1 12 29.9 13.2 32 15.1L37.7 9.4C34.1 6.1 29.3 4 24 4C16.3 4 9.6 8.3 6.3 14.7Z"
+                            />
+
+                            <path
+                                fill="#4CAF50"
+                                d="M24 44C29.2 44 34 42 37.5 38.7L31.4 33.5C29.4 35.1 26.8 36 24 36C18.8 36 14.4 32.7 12.7 28.1L6.2 33.1C9.5 39.5 16.2 44 24 44Z"
+                            />
+
+                            <path
+                                fill="#1976D2"
+                                d="M43.6 20H42V20H24V28H35.3C34.5 30.3 33.1 32.2 31.4 33.5L37.5 38.7C37.1 39.1 44 34 44 24C44 22.7 43.9 21.3 43.6 20Z"
+                            />
+
+                        </svg>
+
+                        <span>
+                            Sign up with Google
+                        </span>
+
+                    </a>
+
+                </form>
+
+            </div>
+
+
+            <!-- Already have account -->
+            <div class="create-account">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="{% url 'users:signin' %}">
+                    Sign in
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>
+            © 2026 TestCraft AI. All rights reserved.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- Show / Hide Password -->
+{% block script %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>
